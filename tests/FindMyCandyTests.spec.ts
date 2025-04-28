@@ -49,7 +49,6 @@ test('Name text field character limit test', async ({ page }) => {
     {
         hundredCharString+='a';
     }
-    await frame.getByRole('textbox', { name: 'characters' }).click();
     await frame.getByRole('textbox', { name: 'characters' }).fill(hundredCharString);
     var a = await frame.getByRole('textbox', { name: 'characters' }).inputValue();
     expect(a?.length).toBe(100);
@@ -61,7 +60,6 @@ test('Name text field character limit test', async ({ page }) => {
     {
         hundredCharString+='a';
     }
-    await frame.getByRole('textbox', { name: 'Other notes' }).first().click();
     await frame.getByRole('textbox', { name: 'Other notes' }).first().fill(hundredCharString);
     var a = await frame.getByRole('textbox', { name: 'Other notes' }).first().inputValue();
     expect(a?.length).toBe(100);
@@ -73,7 +71,6 @@ test('Swallow Velocity text field character limit test', async ({ page }) => {
     {
         hundredCharString+='a';
     }
-    await frame.getByRole('textbox', { name: 'Other notes' }).nth(1).click();
     await frame.getByRole('textbox', { name: 'Other notes' }).nth(1).fill(hundredCharString);
     var a = await frame.getByRole('textbox', { name: 'Other notes' }).nth(1).inputValue();
     expect(a?.length).toBe(100);
